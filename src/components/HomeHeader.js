@@ -8,10 +8,11 @@ import {
 } from "react-native";
 import { useGetMoviesListQuery } from "../redux/api/moviesApi";
 
+
 const HomeHeader = () => {
-  const { data, error, isLoading } = useGetMoviesListQuery(searchTerm);
   const [searchTerm, setSearchTerm] = useState("");
-  console.log(searchTerm);
+  useGetMoviesListQuery(searchTerm);
+
   return (
     <SafeAreaView style={{ marginBottom: 10 }}>
       <View>
